@@ -1,3 +1,6 @@
+cloudinary:
+  service: Cloudinary
+
 development:
   adapter: async
 
