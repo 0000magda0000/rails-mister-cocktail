@@ -7,22 +7,20 @@ def create
   ingredient_id = params[:dose][:ingredient]
   @dose.cocktail = cocktail
   @dose.ingredient_id = ingredient_id
-
   if @dose.save
-    redirect_to root_path
-
+    redirect_to cocktail_path(params[:cocktail_id])
   else
-    render edit_cocktail_path(params[:cocktail_id])
+    redirect_to proc { edit_cocktail_url(params[:cocktail_id]) }
   end
 end
 
-def update
-  if @dose.update(dose_params)
-    redirect_to @cocktail, notice: 'Dose was successfully updated.'
-  else
-    render :edit
-  end
-end
+# def update
+#   if @dose.update(dose_params)
+#     redirect_to @cocktail, notice: 'Dose was successfully updated.'
+#   else
+#     render :edit
+#   end
+# end
 
 def new
   @dose = Dose.find(params[:cocktail_id])

@@ -1,17 +1,16 @@
-<h1><%= @cocktail.name %></h1>
-<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.photo.key %>');">
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+    <a class="btn btn-danger" href="#">Edit Ingredients</a>
+  </div>
+</div>
 
-<ul>
-  <% @cocktail.ingredients.each do |ingredient| %>
-    <li><%= ingredient.name %> </li>
-  <% end %>
+<div class="container">
   <% @cocktail.doses.each do |dose| %>
-    <li><%= dose.description %></li>
+    <% @cocktail.ingredients.each do |ingredient| %>
+      <p><%= "#{ingredient.name}: #{dose.description}" %></p>
+    <% end %>
   <% end %>
-</ul>
 
-
-
-
-
-<p><%= link_to "go back", root_path %></p>
+  <p><%= link_to "go back", root_path %></p>
+</div>

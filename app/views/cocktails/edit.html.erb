@@ -1,9 +1,7 @@
 <h1><%= @cocktail.name %></h1>
-<%= simple_form_for @cocktail do |f| %>
-<%= f.input :ingredients, collection: @ingredients %>
-  <%= f.simple_fields_for :dose do |d| %>
-    <%= d.input :description %>
-  <% end %>
+<%= simple_form_for ([@cocktail, @dose]) do |f| %>
+  <%= f.input :ingredient, collection: @ingredients %>
+  <%= f.input :description %>
   <%= f.submit %>
 <% end %>
 

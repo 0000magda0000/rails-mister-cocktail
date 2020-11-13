@@ -9,20 +9,17 @@ class CocktailsController < ApplicationController
 
   def new
     @cocktail = Cocktail.new
-    @ingredients = Ingredient.all
-
   end
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    @ingredients = Ingredient.all
+    # @ingredients = Ingredient.all
     if @cocktail.save
-      @dose = Dose.new(dose_params)
-      @dose.cocktail = @cocktail
-      raise
+      # @dose = Dose.new(dose_params)
+      # @dose.cocktail = @cocktail
       redirect_to cocktail_path(@cocktail), notice: 'Cocktail was successfully created.'
     else
-      render new_cocktail_path(@cocktail)
+      render "new"
     end
   end
 
@@ -34,20 +31,27 @@ class CocktailsController < ApplicationController
 
    def update
     @cocktail = Cocktail.find(params[:id])
-    if @cocktail.doses.update(dose_params)
+    if @cocktail.update(cocktail_params)
       redirect_to @cocktail, notice: 'cocktail was successfully updated.'
     else
       render :edit
     end
   end
 
-  private
-  def ingredient_params
-    params.require(:ingredient).permit(:name)
+  def destroy
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.destroy
+    redirect_to root_path
+
   end
 
+  private
+  # def ingredient_params
+  #   params.require(:ingredient).permit(:name)
+  # end
+
   def dose_params
-    params.require(:dose).permit(:description, :ingredient_id)
+    params.permit(:description)
   end
 
   def cocktail_params
