@@ -2,10 +2,34 @@
   <li><%= link_to cocktail.name,  cocktail_path(cocktail) %>
     <%= link_to '✏', edit_cocktail_path(cocktail) %>
     <%= link_to '🗑',  cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' } %>
-
-
   </li>
   <% end %>
 </ul>
 
-<%= link_to 'create a new cocktail', new_cocktail_path  %>
+
+
+<div class="container">
+
+  <div class="halley1">
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+  </div>
+
+  <div class="halley2">
+    <p></p>
+    <p></p>
+    <p></p>
+  </div>
+
+  <div class="halley3">
+    <p></p>
+    <p></p>
+    <p></p>
+  </div>
+
+  <div class="halley4">
+    <%= link_to 'create a new cocktail', new_cocktail_path  %>
+  </div>
+</div>
