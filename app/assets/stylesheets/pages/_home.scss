@@ -1,1 +1,132 @@
 // Specific CSS for your home-page
+
+a {
+  font-family: helvetica, sans-serif;
+  font-size: 5vw;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-areas: "h1 h2"
+                       "h1 h3"
+                       "h4 h4";
+}
+
+p {
+  margin: 0;
+}
+
+.halley1 {
+  background-color: $neon-green;
+  width: 40vw;
+  height: 60vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 11vw;
+  grid-area: h1;
+}
+
+.halley1 p {
+  background-color: $purple;
+  width: 7vw;
+  height: 48vw;
+  flex-direction: column;
+  border: solid;
+  border-width: .5vw;
+  border-color: $yellow-gaps;
+}
+.halley1 p:nth-child(0n+1) {
+  border-width: 1vw 0.5vw 1vw 1vw;
+}
+.halley1 p:nth-child(0n+2) {
+  border-width: 1vw 0.5vw 1vw 0.5vw;
+}
+
+.halley1 p:nth-child(0n+3) {
+  border-width: 1vw .5vw 1vw .5vw;
+}
+
+.halley1 p:nth-child(0n+4) {
+  border-width: 1vw 1vw 1vw 0.5vw;
+}
+
+.halley2 {
+  background-color: $pink;
+  width: 28vw;
+  height: 28vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5vw;
+  grid-area: h2;
+
+}
+.halley2 p {
+  background-color: $neon-orange;
+  width: 7vw;
+  height: 21vw;
+  flex-direction: column;
+  border: solid;
+  border-color: $green-gaps;
+}
+
+.halley2 p:nth-child(0n+1) {
+  border-width: 1vw 0.5vw 1vw 1vw;
+}
+.halley2 p:nth-child(0n+2) {
+  border-width: 1vw 0.5vw 1vw 0.5vw;
+}
+
+.halley2 p:nth-child(0n+3) {
+  border-width: 1vw 1vw 1vw .5vw;
+}
+
+
+.halley3 {
+  background-color: $neon-red;
+  width: 40vw;
+  height: 40vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5vw;
+  grid-area: h3;
+  margin-right: 4vw;
+  margin-left: 3vw;
+  margin-top: 2.2vw;
+}
+.halley3 p {
+  background-color: $fogg;
+  width: 10vw;
+  height: 30vw;
+  flex-direction: column;
+  border: solid;
+  border-color: $red-gaps;
+}
+
+.halley3 p:nth-child(0n+1) {
+  border-width: 1vw 0.5vw 1vw 1vw;
+}
+.halley3 p:nth-child(0n+2) {
+  border-width: 1vw 0.5vw 1vw 0.5vw;
+}
+
+.halley3 p:nth-child(0n+3) {
+  border-width: 1vw 1vw 1vw .5vw;
+}
+
+.halley4 {
+  width: 100vw;
+  height: 10vw;
+  grid-area: h4;
+  background-color: $pale-orange;
+}
