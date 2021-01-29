@@ -18,6 +18,9 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 gem 'cloudinary', '~> 1.16.0'
+gem 'bootstrap', '~> 5.0.0.alpha3'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
