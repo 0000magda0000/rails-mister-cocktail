@@ -2,7 +2,6 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
-@import "config/*"
 @import "bootstrap/scss/bootstrap";
 
 // External libraries
@@ -13,7 +12,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/cocktails";
+@import "pages/doses";
 
 // from controller action
-@import "cocktails";
-@import "doses";
