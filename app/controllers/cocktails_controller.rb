@@ -29,7 +29,7 @@ class CocktailsController < ApplicationController
     @dose = Dose.new
   end
 
-   def update
+  def update
     @cocktail = Cocktail.find(params[:id])
     if @cocktail.update(cocktail_params)
       redirect_to @cocktail, notice: 'cocktail was successfully updated.'
@@ -42,13 +42,12 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
     @cocktail.destroy
     redirect_to root_path
-
   end
 
-  private
   # def ingredient_params
   #   params.require(:ingredient).permit(:name)
   # end
+  private
 
   def dose_params
     params.permit(:description)
