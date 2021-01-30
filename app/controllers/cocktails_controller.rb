@@ -29,7 +29,7 @@ class CocktailsController < ApplicationController
   def update
     @cocktail = Cocktail.find(params[:id])
     if @cocktail.update(cocktail_params)
-      redirect_to @cocktail, notice: 'cocktail was successfully updated.'
+      redirect_to @cocktail, notice: 'Cocktail was successfully updated.'
     else
       render :edit
     end
