@@ -5,7 +5,3 @@ Rails.application.routes.draw do
     resources :doses, only: [:create, :new, :update]
   end
 end
-
-
-# GET "cocktails/42/doses/new"
-# POST "cocktails/42/doses"

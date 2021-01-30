@@ -1,5 +1,5 @@
 <ul><% @cocktails.each do |cocktail| %>
-  <li><%= link_to cocktail.name,  cocktail_path(cocktail) %>
+  <li><%= link_to cocktail.name, cocktail_path(cocktail) %>
     <%= link_to '✏', edit_cocktail_path(cocktail) %>
     <%= link_to '🗑',  cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' } %>
   </li>

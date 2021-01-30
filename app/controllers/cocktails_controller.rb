@@ -13,10 +13,7 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    # @ingredients = Ingredient.all
     if @cocktail.save
-      # @dose = Dose.new(dose_params)
-      # @dose.cocktail = @cocktail
       redirect_to cocktail_path(@cocktail), notice: 'Cocktail was successfully created.'
     else
       render "new"
@@ -24,7 +21,7 @@ class CocktailsController < ApplicationController
   end
 
   def edit
-    @cocktail = Cocktail.find(params[:id]) # from the click params
+    @cocktail = Cocktail.find(params[:id])
     @ingredients = Ingredient.all
     @dose = Dose.new
   end
@@ -44,9 +41,6 @@ class CocktailsController < ApplicationController
     redirect_to root_path
   end
 
-  # def ingredient_params
-  #   params.require(:ingredient).permit(:name)
-  # end
   private
 
   def dose_params
